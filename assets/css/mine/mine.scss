@@ -1,0 +1,130 @@
+.jumbotron {
+  padding: 10px 30px !important;
+
+  h2 {
+    background-image: url(/public/images/mma-logo.png);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+  }
+}
+
+section {
+  margin-bottom: 20px;
+
+  > h1:first-child,
+  > h2:first-child,
+  > h3:first-child,
+  > h4:first-child,
+  > h5:first-child {
+    margin-top: 0px;
+  }
+}
+
+mark {
+  background-color: yellow;
+}
+
+.popover {
+  max-width: 400px;
+}
+
+// put people table alongside quotations
+
+.people-table {
+  tr {
+    cursor: pointer;
+  }
+
+  .person-filter {
+    td {
+      border-top: 0px;
+    }
+
+    td:first-child {
+      padding-top: 10px;
+    }
+  }
+
+  .dot-holder {
+    padding: 0px;
+    vertical-align: middle;
+
+    .dot {
+      background-color: limegreen;
+      border-radius: 50%;
+      margin: auto;
+    }
+  }
+
+}
+
+.people-quotations {
+  h3 {
+    margin-top: 0px;
+  }
+
+  .quotation-list > li {
+    margin-bottom: 10px;
+  }
+
+  .list-inline a {
+    color: #777;
+  }
+
+  .quote {
+    // needed because we attached popovers to these guys
+    display: block;
+  }
+}
+
+.media {
+  .medium {
+    cursor: pointer;
+  }
+
+  .all {
+    .col-sm-3 {
+      width: 20.75%;
+    }
+    .col-sm-9 {
+      width: 79.25%;
+    }
+  }
+
+  .media-bar {
+    background-color: #efefef;
+    margin-top: 5px;
+
+    .bar {
+      background-color: gray;
+      height: 10px;
+    }
+  }
+
+  .active {
+    a {
+      font-weight: bold;
+      color: inherit;
+    }
+    .bar {
+      background-color: orange;
+    }
+  }
+}
+
+footer {
+  border-top: 10px solid #ddd;
+  margin-top: 120px;
+  padding: 20px 10px;
+  background-color: #eee;
+
+  .logo {
+    margin-left: 25px;
+  }
+
+  .partner {
+    height: 40px;
+    width: auto;
+  }
+}

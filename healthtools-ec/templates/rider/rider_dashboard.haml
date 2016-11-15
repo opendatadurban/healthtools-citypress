@@ -1,0 +1,18 @@
+%%inherit(file="../layout.haml")
+%%block(name='title')
+  Dashboard
+
+%h1 MMA-Dexter
+%p.lead
+  Navigate media reports relating to people/organizations of interest.
+%hr
+
+%section
+  %h3
+    Recently added articles
+    %a(href=url_for('activity')) view all &rarr;
+
+  %%include(file='activity_list.haml')
+
+  %p
+    %a(href=url_for('activity')) View recent activity &rarr;
