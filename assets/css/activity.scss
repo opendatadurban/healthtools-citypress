@@ -1,0 +1,143 @@
+.activity-refine {
+  .analysis_nature .btn-group {
+    display: block;
+  }
+
+  .checkbox {
+    margin: 0px;
+  }
+
+  .buttons {
+    margin-top: 80px;
+  }
+}
+
+.tab-content {
+  margin-top: 10px;
+}
+
+.analysis {
+  th.sparkline {
+    text-align: center;
+  }
+
+  td.sparkline {
+    width: 120px;
+  }
+
+  td.trend {
+    white-space: nowrap;
+  }
+
+  td.rank {
+    color: #777;
+  }
+}
+
+#charts {
+  .chart.chart-created,
+  .chart.chart-published {
+    height: 130px;
+  }
+
+  .chart.chart-countries,
+  .chart.chart-users {
+    height: 150px;
+  }
+
+  .chart.chart-problems,
+  .chart.chart-markers {
+    height: auto;
+
+    h3, h4 {
+      margin: 0px;
+    }
+  }
+
+  .chart .indicator {
+    float: left;
+    width: 50%;
+    margin-bottom: 20px;
+    padding-right: 5px;
+    display: inline-block;
+  }
+
+  .chart.chart-fairness {
+    height: 100px;
+  }
+
+  .chart.chart-media {
+    height: 630px;
+  }
+}
+
+// trend arrows
+.fa-rotate-45 {
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg)
+}
+
+.fa-rotate--45 {
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg)
+}
+
+.trend-up,
+.trend-down {
+  display: inline-block;
+}
+
+.trend-up {
+  color: red;
+}
+
+.trend-down {
+  color: blue;
+}
+
+.trend-steady {
+  color: gray;
+}
+
+.topic-list {
+  padding-left: 0px;
+  list-style: none;
+
+  h4 {
+    margin: 0px;
+  }
+
+  li.topic {
+    display: inline-block;
+    width: 48%;
+    margin-right: 10px;
+    vertical-align: top;
+  }
+}
+
+.topics-container {
+  .loading-indicator {
+    text-align: center;
+    margin-top: 50px;
+  }
+}
+
+div.sparkline {
+  width: 120px;
+  display: inline-block;
+}
+
+.tag-summary {
+  margin-bottom: 0px;
+}
+
+table.taxonomies {
+  .bar-col {
+    width: 50%;
+  }
+  .bar {
+    background-color: #7cb5ec;
+    height: 1em;
+    margin-top: 4px;
+  }
+}
