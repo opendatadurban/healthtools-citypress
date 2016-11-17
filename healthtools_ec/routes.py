@@ -1,5 +1,5 @@
 from healthtools_ec.app import app
-from flask import url_for, redirect
+from flask import url_for, redirect, session
 from flask_mako import render_template
 from flask_security import current_user
 from healthtools_ec.models import db, User
@@ -10,8 +10,12 @@ import healthtools_ec.initiates
 
 
 @app.route('/')
-def home():
-    return render_template('home/index.haml')
+def home(lang=0):
+    session['lang'] = lang
+    if session['lang']:
+        return render_template('home/index_x.haml')
+    else:
+        return render_template('home/home.haml')
 
 
 @app.route('/admin')

@@ -9,7 +9,6 @@ class ReportSurgeon(db.Model):
     __tablename__ = 'reportsurgeons'
 
     id = db.Column(db.Integer, autoincrement=True, primary_key=True)
-    name = db.Column(db.String(50))
     opt_name = db.Column(db.String(50), nullable=True)
     phone_number = db.Column(db.String(10))
     surgeons_name = db.Column(db.String(50))
@@ -26,7 +25,6 @@ class ReportForm(Form):
     class Meta:
         model = ReportSurgeon
 
-    name = StringField('Initiate Name', [validators.Length(max=50), validators.DataRequired()])
     opt_name = StringField('Name of person reporting', [validators.Length(max=50), validators.DataRequired()])
     phone_number = StringField('Phone Number', [validators.Length(min=10, max=10), validators.DataRequired()])
     surgeons_name = StringField('Surgeon Name', [validators.Length(max=50), validators.DataRequired()])
