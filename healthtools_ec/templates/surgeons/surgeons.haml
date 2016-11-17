@@ -1,0 +1,37 @@
+%%inherit(file="../layout.haml")
+<%namespace file="../helpers/bootstrap_wtf.haml" import="*"/>
+
+%%block(name="title")
+  Surgeons
+
+.row
+  .col-sm-6
+    %form.safedirty.edit-analysis(action=url_for('surgeons_home'), method='POST', dataRemote='true')
+      = form.csrf_token
+      .panel-body
+        %section
+          .row
+            .col-sm-6
+              .form-group
+                = form.name.label()
+            .col-sm-6
+              .input-group
+                = field_input(form.name, maxlength=50)
+          .row
+            .col-sm-6
+              .form-group
+                = form.phone_number.label()
+            .col-sm-6
+              .input-group
+                = field_input(form.phone_number, maxlength=10)
+          .row
+            .col-sm-6
+              .form-group
+                = form.area.label()
+            .col-sm-6
+              .input-group
+                = field_input(form.area, maxlength=255)
+
+    %button.btn.btn-success.submit(type='button', dataDisableWith='Submitting...')
+      %i.fa.fa-tasks
+      Submit
