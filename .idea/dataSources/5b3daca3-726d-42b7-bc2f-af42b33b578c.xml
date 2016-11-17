@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="PostgreSQL - healthtools@localhost">
+  <database-model serializer="dbm" rdbms="POSTGRES" format-version="2.6">
+    <database id="1" name="healthtools">
+      <object-id>17461</object-id>
+      <visible>1</visible>
+    </database>
+    <database id="2" name="postgres">
+      <object-id>12373</object-id>
+    </database>
+    <database id="3" name="gibela">
+      <object-id>16393</object-id>
+    </database>
+    <database id="4" name="gibela_dev">
+      <object-id>16395</object-id>
+    </database>
+    <schema id="5" parent="1" name="public">
+      <object-id>2200</object-id>
+      <visible>1</visible>
+      <introspection-state-number>1261</introspection-state-number>
+      <introspection-timestamp>2016-11-16.15:51:53.855</introspection-timestamp>
+    </schema>
+    <schema id="6" parent="1" name="pg_catalog">
+      <object-id>11</object-id>
+    </schema>
+    <schema id="7" parent="1" name="pg_toast">
+      <object-id>99</object-id>
+    </schema>
+    <schema id="8" parent="1" name="pg_temp_1">
+      <object-id>11816</object-id>
+    </schema>
+    <schema id="9" parent="1" name="pg_toast_temp_1">
+      <object-id>11817</object-id>
+    </schema>
+    <schema id="10" parent="1" name="information_schema">
+      <object-id>12081</object-id>
+    </schema>
+    <sequence id="11" parent="5" name="initiates_id_seq">
+      <object-id>18843</object-id>
+      <state-number>1257</state-number>
+    </sequence>
+    <sequence id="12" parent="5" name="reportsurgeons_id_seq">
+      <object-id>18856</object-id>
+      <state-number>1259</state-number>
+    </sequence>
+    <sequence id="13" parent="5" name="roles_id_seq">
+      <object-id>18825</object-id>
+      <state-number>1255</state-number>
+    </sequence>
+    <sequence id="14" parent="5" name="surgeons_id_seq">
+      <object-id>18835</object-id>
+      <state-number>1256</state-number>
+    </sequence>
+    <sequence id="15" parent="5" name="users_id_seq">
+      <object-id>18813</object-id>
+      <state-number>1252</state-number>
+    </sequence>
+    <table id="16" parent="5" name="initiates">
+      <object-id>18845</object-id>
+      <state-number>1257</state-number>
+    </table>
+    <table id="17" parent="5" name="reportsurgeons">
+      <object-id>18858</object-id>
+      <state-number>1259</state-number>
+    </table>
+    <table id="18" parent="5" name="roles">
+      <object-id>18827</object-id>
+      <state-number>1261</state-number>
+    </table>
+    <table id="19" parent="5" name="roles_users">
+      <object-id>18869</object-id>
+      <state-number>1261</state-number>
+    </table>
+    <table id="20" parent="5" name="surgeons">
+      <object-id>18837</object-id>
+      <state-number>1256</state-number>
+    </table>
+    <table id="21" parent="5" name="users">
+      <object-id>18815</object-id>
+      <state-number>1261</state-number>
+    </table>
+    <column id="22" parent="16" name="id">
+      <state-number>1257</state-number>
+      <mandatory>1</mandatory>
+      <data-type>integer|0</data-type>
+      <default-expression>nextval(&apos;initiates_id_seq&apos;::regclass)</default-expression>
+    </column>
+    <column id="23" parent="16" name="name">
+      <state-number>1257</state-number>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="24" parent="16" name="phone_number">
+      <state-number>1257</state-number>
+      <data-type>varchar(10)|0</data-type>
+    </column>
+    <column id="25" parent="16" name="initiate_problem">
+      <state-number>1257</state-number>
+      <data-type>varchar(1024)|0</data-type>
+    </column>
+    <column id="26" parent="16" name="timestamp">
+      <state-number>1257</state-number>
+      <mandatory>1</mandatory>
+      <data-type>timestamp with time zone|0</data-type>
+      <default-expression>now()</default-expression>
+    </column>
+    <index id="27" parent="16" name="initiates_pkey">
+      <object-id>18853</object-id>
+      <columns>id</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <index id="28" parent="16" name="ix_initiates_timestamp">
+      <object-id>18855</object-id>
+      <columns>timestamp</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="29" parent="16" name="initiates_pkey">
+      <object-id>18854</object-id>
+      <columns>id</columns>
+      <underlying-index>initiates_pkey</underlying-index>
+      <primary>1</primary>
+    </key>
+    <column id="30" parent="17" name="id">
+      <state-number>1259</state-number>
+      <mandatory>1</mandatory>
+      <data-type>integer|0</data-type>
+      <default-expression>nextval(&apos;reportsurgeons_id_seq&apos;::regclass)</default-expression>
+    </column>
+    <column id="31" parent="17" name="name">
+      <state-number>1259</state-number>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="32" parent="17" name="opt_name">
+      <state-number>1259</state-number>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="33" parent="17" name="phone_number">
+      <state-number>1259</state-number>
+      <data-type>varchar(10)|0</data-type>
+    </column>
+    <column id="34" parent="17" name="surgeons_name">
+      <state-number>1259</state-number>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="35" parent="17" name="area">
+      <state-number>1259</state-number>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="36" parent="17" name="report_problem">
+      <state-number>1259</state-number>
+      <data-type>varchar(1024)|0</data-type>
+    </column>
+    <column id="37" parent="17" name="timestamp">
+      <state-number>1259</state-number>
+      <mandatory>1</mandatory>
+      <data-type>timestamp with time zone|0</data-type>
+      <default-expression>now()</default-expression>
+    </column>
+    <index id="38" parent="17" name="reportsurgeons_pkey">
+      <object-id>18866</object-id>
+      <columns>id</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <index id="39" parent="17" name="ix_reportsurgeons_timestamp">
+      <object-id>18868</object-id>
+      <columns>timestamp</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="40" parent="17" name="reportsurgeons_pkey">
+      <object-id>18867</object-id>
+      <columns>id</columns>
+      <underlying-index>reportsurgeons_pkey</underlying-index>
+      <primary>1</primary>
+    </key>
+    <column id="41" parent="18" name="id">
+      <state-number>1255</state-number>
+      <mandatory>1</mandatory>
+      <data-type>integer|0</data-type>
+      <default-expression>nextval(&apos;roles_id_seq&apos;::regclass)</default-expression>
+    </column>
+    <column id="42" parent="18" name="name">
+      <state-number>1255</state-number>
+      <data-type>varchar(80)|0</data-type>
+    </column>
+    <column id="43" parent="18" name="description">
+      <state-number>1255</state-number>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <index id="44" parent="18" name="roles_pkey">
+      <object-id>18831</object-id>
+      <columns>id</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <index id="45" parent="18" name="roles_name_key">
+      <object-id>18833</object-id>
+      <columns>name</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="46" parent="18" name="roles_pkey">
+      <object-id>18832</object-id>
+      <columns>id</columns>
+      <underlying-index>roles_pkey</underlying-index>
+      <primary>1</primary>
+    </key>
+    <key id="47" parent="18" name="roles_name_key">
+      <object-id>18834</object-id>
+      <columns>name</columns>
+      <underlying-index>roles_name_key</underlying-index>
+    </key>
+    <column id="48" parent="19" name="user_id">
+      <state-number>1261</state-number>
+      <data-type>integer|0</data-type>
+    </column>
+    <column id="49" parent="19" name="role_id">
+      <state-number>1261</state-number>
+      <data-type>integer|0</data-type>
+    </column>
+    <foreign-key id="50" parent="19" name="roles_users_user_id_fkey">
+      <object-id>18872</object-id>
+      <columns>user_id</columns>
+      <ref-key>~.users.users_pkey</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="51" parent="19" name="roles_users_role_id_fkey">
+      <object-id>18877</object-id>
+      <columns>role_id</columns>
+      <ref-key>~.roles.roles_pkey</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="52" parent="20" name="id">
+      <state-number>1256</state-number>
+      <mandatory>1</mandatory>
+      <data-type>integer|0</data-type>
+      <default-expression>nextval(&apos;surgeons_id_seq&apos;::regclass)</default-expression>
+    </column>
+    <column id="53" parent="20" name="name">
+      <state-number>1256</state-number>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="54" parent="20" name="id_number">
+      <state-number>1256</state-number>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="55" parent="20" name="area">
+      <state-number>1256</state-number>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="56" parent="20" name="phone_number">
+      <state-number>1256</state-number>
+      <data-type>varchar(10)|0</data-type>
+    </column>
+    <column id="57" parent="20" name="standard">
+      <state-number>1256</state-number>
+      <data-type>varchar(10)|0</data-type>
+    </column>
+    <column id="58" parent="20" name="category">
+      <state-number>1256</state-number>
+      <data-type>varchar(10)|0</data-type>
+    </column>
+    <index id="59" parent="20" name="surgeons_pkey">
+      <object-id>18841</object-id>
+      <columns>id</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="60" parent="20" name="surgeons_pkey">
+      <object-id>18842</object-id>
+      <columns>id</columns>
+      <underlying-index>surgeons_pkey</underlying-index>
+      <primary>1</primary>
+    </key>
+    <column id="61" parent="21" name="id">
+      <state-number>1252</state-number>
+      <mandatory>1</mandatory>
+      <data-type>integer|0</data-type>
+      <default-expression>nextval(&apos;users_id_seq&apos;::regclass)</default-expression>
+    </column>
+    <column id="62" parent="21" name="email">
+      <state-number>1252</state-number>
+      <mandatory>1</mandatory>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="63" parent="21" name="password">
+      <state-number>1252</state-number>
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="64" parent="21" name="disabled">
+      <state-number>1252</state-number>
+      <data-type>boolean|0</data-type>
+    </column>
+    <column id="65" parent="21" name="created_at">
+      <state-number>1252</state-number>
+      <mandatory>1</mandatory>
+      <data-type>timestamp with time zone|0</data-type>
+      <default-expression>now()</default-expression>
+    </column>
+    <column id="66" parent="21" name="updated_at">
+      <state-number>1252</state-number>
+      <data-type>timestamp with time zone|0</data-type>
+      <default-expression>now()</default-expression>
+    </column>
+    <index id="67" parent="21" name="users_pkey">
+      <object-id>18821</object-id>
+      <columns>id</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <index id="68" parent="21" name="ix_users_email">
+      <object-id>18823</object-id>
+      <columns>email</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <index id="69" parent="21" name="ix_users_created_at">
+      <object-id>18824</object-id>
+      <columns>created_at</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="70" parent="21" name="users_pkey">
+      <object-id>18822</object-id>
+      <columns>id</columns>
+      <underlying-index>users_pkey</underlying-index>
+      <primary>1</primary>
+    </key>
+  </database-model>
+</dataSource>

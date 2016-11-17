@@ -1,8 +1,8 @@
 from flask_script import Manager
 from flask_migrate import Migrate, MigrateCommand
 
-from healthtools-ec.core import app
-from healthtools-ec.models import db
+from healthtools_ec.core import app
+from healthtools_ec.models import db
 
 migrate = Migrate(app, db)
 manager = Manager(app)
