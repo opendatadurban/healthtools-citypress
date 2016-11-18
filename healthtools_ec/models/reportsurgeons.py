@@ -25,7 +25,7 @@ class ReportForm(Form):
     class Meta:
         model = ReportSurgeon
 
-    opt_name = StringField('Name of person reporting', [validators.Length(max=50), validators.DataRequired()])
+    opt_name = StringField('Name of person reporting', [validators.Length(max=50), validators.Optional()])
     phone_number = StringField('Phone Number', [validators.Length(min=10, max=10), validators.DataRequired()])
     surgeons_name = StringField('Surgeon Name', [validators.Length(max=50), validators.DataRequired()])
     area = StringField('Area of the problem', [validators.Length(max=255), validators.DataRequired()])

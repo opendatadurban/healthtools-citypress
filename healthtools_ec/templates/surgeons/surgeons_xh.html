@@ -27,7 +27,7 @@
     <title>About</title>
 </head>
 <body>
- <nav class="navbar navbar-default navbar-fixed-top col-xs-12 col-lg-6 col-md-8 col-md-offset-3">
+<nav class="navbar navbar-default navbar-fixed-top col-xs-12 col-lg-6 col-md-8 col-md-offset-3">
     <div class="container">
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="navbar-header page-scroll">
@@ -38,59 +38,60 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#page-top">Initiation Watch<br/><p>Ezolwaluko</p></a>
+            <a class="navbar-brand" href="#page-top">Initiation Watch<br/>
+                <p>Ezolwaluko</p></a>
         </div>
         <div class="nav collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-center">
-                <li class = "dropdown">
-            <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown">
-               Search
-               <b class = "caret"></b>
-            </a>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        Search
+                        <b class="caret"></b>
+                    </a>
 
-                    <ul class = "dropdown-menu">
-               <li><a href = "#">Is your surgeon registered?</a></li>
-            </ul>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Is your surgeon registered?</a></li>
+                    </ul>
                 </li>
-                <li class = "dropdown">
-            <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown">
-               Get Help
-               <b class = "caret"></b>
-            </a>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        Get Help
+                        <b class="caret"></b>
+                    </a>
 
-                    <ul class = "dropdown-menu">
-               <li><a href = "#">Is an initiate in trouble?</a></li>
-            </ul>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Is an initiate in trouble?</a></li>
+                    </ul>
                 </li>
-                <li class = "dropdown">
-            <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown">
-               Register
-               <b class = "caret"></b>
-            </a>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        Register
+                        <b class="caret"></b>
+                    </a>
 
-                    <ul class = "dropdown-menu">
-               <li><a href = "#">As a traditional surgeon</a></li>
-            </ul>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">As a traditional surgeon</a></li>
+                    </ul>
                 </li>
-                <li class = "dropdown">
-            <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown">
-               Find
-               <b class = "caret"></b>
-            </a>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        Find
+                        <b class="caret"></b>
+                    </a>
 
-                    <ul class = "dropdown-menu">
-               <li><a href = "#">Find a Clinic</a></li>
-            </ul>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Find a Clinic</a></li>
+                    </ul>
                 </li>
-                <li class = "dropdown">
-            <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown">
-               Contact
-               <b class = "caret"></b>
-            </a>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        Contact
+                        <b class="caret"></b>
+                    </a>
 
-                    <ul class = "dropdown-menu">
-               <li><a href = "#">Contact Details</a></li>
-            </ul>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Contact Details</a></li>
+                    </ul>
                 </li>
             </ul>
         </div>
@@ -102,64 +103,67 @@
 </body>
 <section class="success" id="home">
 
-                <div class="about col-xs-12 col-lg-6 col-md-8 col-md-offset-3" style="text-align: left">
+    <div class="about col-xs-12 col-lg-6 col-md-8 col-md-offset-3" style="text-align: left">
 
-                    <p>It is important for traditional surgeons to register with the department of health to ensure they have the requisite skills to perform circumcisions.
-                            If you would like to register, fill out these fields and a government official will contact you.
-</p><br/>
+        <p>It is important for traditional surgeons to register with the department of health to ensure they have the
+            requisite skills to perform circumcisions.
+            If you would like to register, fill out these fields and a government official will contact you.
+        </p><br/>
 
-<form action="{{url_for('surgeons_register')}}" class="form-horizontal" method="POST">
-        {{ form.hidden_tag() }}
-        <div class="form-group {% if form.name.errors %} has-error {% endif %}">
-        <div class="control-label col-sm-3">
-            Bhala igama?
-        </div>
-        <div class="col-sm-3">
-        {{ form.name(placeholder="Type your name...", class="form-control") }}
-        </div>
-        <p class="col-sm-5 help-block">
-        {{ form.name.errors[0] }}
-
-        </div>
-        <div class="form-group {% if form.phone_number.errors %} has-error {% endif %}">
-        <div class="control-label col-sm-3">
-            Ithini ifone number?
-        </div>
-        <div class="col-sm-3">
-        {{ form.phone_number(placeholder="Type your phone number...", class="form-control") }}
-        </div>
-        <p class="col-sm-5 help-block">
-        {{ form.phone_number.errors[0] }}
-
-        </div>
-        <div class="form-group {% if form.area.errors %} has-error {% endif %}">
-        <div class="control-label col-sm-3">
-            Ingaba ikweyiphi indawo ingcibi?
-        </div>
-        <div class="col-sm-3">
-        {{ form.area(placeholder="Type your area...", class="form-control") }}
-        </div>
-        <p class="col-sm-5 help-block">
-        {{ form.area.errors[0] }}
-
-        </div>
-        <button class="btn btn-success" type="submit">Submit</button>
-</form>
+        <form action="{{url_for('surgeons_register')}}" class="form-horizontal" method="POST">
+            {{ form.hidden_tag() }}
+            <div class="form-group {% if form.name.errors %} has-error {% endif %}">
+                <div class="control-label col-sm-3">
+                    Bhala igama?
                 </div>
+                <div class="col-sm-3">
+                    {{ form.name(placeholder="Type your name...", class="form-control") }}
+                </div>
+                <p class="col-sm-5 help-block">
+                    {{ form.name.errors[0] }}
+
+            </div>
+            <div class="form-group {% if form.phone_number.errors %} has-error {% endif %}">
+                <div class="control-label col-sm-3">
+                    Ithini ifone number?
+                </div>
+                <div class="col-sm-3">
+                    {{ form.phone_number(placeholder="Type your phone number...", class="form-control") }}
+                </div>
+                <p class="col-sm-5 help-block">
+                    {{ form.phone_number.errors[0] }}
+
+            </div>
+            <div class="form-group {% if form.area.errors %} has-error {% endif %}">
+                <div class="control-label col-sm-3">
+                    Ingaba ikweyiphi indawo ingcibi?
+                </div>
+                <div class="col-sm-3">
+                    {{ form.area(placeholder="Type your area...", class="form-control") }}
+                </div>
+                <p class="col-sm-5 help-block">
+                    {{ form.area.errors[0] }}
+
+            </div>
+            <button class="btn btn-success" type="submit">Submit</button>
+        </form>
+    </div>
 
 </section>
 <br/>
 <footer class="footer-basic-centered col-xs-12 col-lg-6 col-md-8 col-md-offset-3">
     <br/>
-      <div class="footer-basic-centered footer-company-motto"><a href="http://city-press.news24.com/.com"><img src="/static/img/logo.png" /></a></div><br/>
-	<a href="#">Terms of Use</a>
-				·
-				<a href="#">Frequently asked Questions</a>
-				·
-				<a href="#">About this tool</a>
-        </p>
+    <div class="footer-basic-centered footer-company-motto"><a href="http://city-press.news24.com/.com"><img
+            src="/static/img/logo.png"/></a></div>
+    <br/>
+    <a href="#">Terms of Use</a>
+    ·
+    <a href="#">Frequently asked Questions</a>
+    ·
+    <a href="#">About this tool</a>
+    </p>
 
-    </footer>
+</footer>
 </html>
 
 

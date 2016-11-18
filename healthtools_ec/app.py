@@ -1,10 +1,13 @@
 import os
 from flask import Flask
 
-app = Flask(__name__, static_folder='public')
+app = Flask(__name__, static_folder='static')
 env = os.environ.get('FLASK_ENV', 'development')
 app.config['ENV'] = env
-app.config.from_pyfile('config.py')
+if env == 'development':
+    app.config.from_pyfile('config.py')
+else:
+    app.config.from_pyfile('config_prod.py')
 
 from flask_mako import MakoTemplates, _lookup, render_template
 import haml

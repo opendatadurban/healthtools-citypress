@@ -10,7 +10,6 @@ from .models.surgeons import RegisterForm
 @app.route('/register', methods=['GET', 'POST'])
 def surgeons_register():
     form = RegisterForm()
-    session['lang'] = 0
     status = 200
     if request.method == 'POST':
         if form.validate():
@@ -20,10 +19,9 @@ def surgeons_register():
             db.session.add(surgeon)
             db.session.commit()
             if session['lang']:
-                flash('Thank you for submitting!')
+                return render_template('surgeons/registersurgeonredirect_xh.html')
             else:
-                flash('Thank you for submitting!')
-            return redirect(url_for('home'))
+                return render_template('surgeons/registersurgeonredirect.html')
         else:
             if request.is_xhr:
                 status = 412
@@ -35,7 +33,7 @@ def surgeons_register():
 
     if not request.is_xhr:
         if session['lang']:
-            resp = make_response(render_template('surgeons/surgeons_x.haml', form=form))
+            resp = make_response(render_template('surgeons/surgeons_xh.html', form=form))
         else:
             resp = make_response(render_template('surgeons/surgeons.html', form=form))
 
