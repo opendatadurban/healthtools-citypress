@@ -6,7 +6,7 @@
 
 .row
   .col-sm-6
-    %form.safedirty.edit-analysis(action=url_for('surgeons_home'), method='POST', dataRemote='true')
+    %form.safedirty.edit-analysis(action=url_for('surgeons_register'), method='POST', dataRemote='true')
       = form.csrf_token
       .panel-body
         %section

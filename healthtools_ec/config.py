@@ -7,7 +7,6 @@ TESTING = False
 SQLALCHEMY_TRACK_MODIFICATIONS = False
 CSRF_ENABLED = True
 SECRET_KEY = 'uhrmaHghurds3craTC0de!'
-SQLALCHEMY_DATABASE_URI = 'postgresql://healthtools:healthtools@localhost/healthtools'
 SQLALCHEMY_MIGRATE_REPO = os.path.join(basedir, 'db_repository')
 
 MAIL_DEFAULT_SENDER = "matthew@opendata.durban"

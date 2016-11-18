@@ -1,6 +1,6 @@
 from healthtools_ec.app import app
-from flask_mako import render_template
-from flask import request, url_for, redirect, flash, make_response
+# from flask_mako import render_template
+from flask import request, url_for, redirect, flash, make_response, session, render_template
 
 from .models import db
 from .models import *
@@ -18,17 +18,24 @@ def reports_home():
                 form.populate_obj(report)
             db.session.add(report)
             db.session.commit()
-            flash('Thank you for submitting!')
-            return redirect(url_for('home'))
+            if session['lang']:
+                return render_template('reportsurgeons/reportsurgeonredirect_xh.html')
+            else:
+                render_template('reportsurgeons/reportsurgeonredirect.html')
         else:
             if request.is_xhr:
                 status = 412
             else:
-                flash('Please correct the problems below and try again.', 'warning')
+                if session['lang']:
+                    flash('Please correct the problems below and try again.', 'warning')
+                else:
+                    flash('Please correct the problems below and try again.', 'warning')
 
     if not request.is_xhr:
-
-        resp = make_response(render_template('reportsurgeons/reportsurgeons.haml', form=form))
+        if session['lang']:
+            resp = make_response(render_template('reportsurgeons/reportsurgeons_xh.html', form=form))
+        else:
+            resp = make_response(render_template('reportsurgeons/reportsurgeons.html', form=form))
 
     else:
         resp = ''
