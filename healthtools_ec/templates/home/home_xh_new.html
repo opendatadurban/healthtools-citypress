@@ -1,35 +1,23 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
-
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <title>Ezolwaluko</title>
+    <meta charset="UTF-8">
+    <title>Main</title>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="/static/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="/static/css/freelancer.css" rel="stylesheet">
+    <link href="/static/css/new.css" rel="stylesheet">
     <!-- Custom Fonts -->
-    <link href="/static/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=PT+Sans:400,700" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"
-          type="text/css">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
 </head>
 
 <body>
- <!-- Header -->
-
-   <!-- Navigation -->
  <nav class="navbar navbar-default navbar-fixed-top col-xs-12 col-lg-6 col-md-8 col-md-offset-3">
     <div class="container">
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -41,7 +29,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{{ url_for('home')}}">Ezolwaluko<br/><p>Initiation Watch Beta</p></a>
+            <a class="navbar-brand" href="{{ url_for('home') }}">Ezolwaluko<br/><p>Initiation Watch Beta</p></a>
         </div>
         <div class="nav collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-center">
@@ -68,26 +56,26 @@
                 </li>
                 <li class = "dropdown">
             <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown">
-               Chaza
+               Cofa
                <b class = "caret"></b>
             </a>
 
                     <ul class = "dropdown-menu">
-               <li><a href = "{{url_for('reports_home')}}">Chaza ingcibi engekhosemthethweni</a></li>
+               <li><a href = "{{url_for('surgeons_register')}}">Chaza ingcibi engekhosemthethweni</a></li>
             </ul>
                 </li>
                 <li class = "dropdown">
             <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown">
-               Ingcibi
+               Khangela
                <b class = "caret"></b>
             </a>
 
                     <ul class = "dropdown-menu">
-               <li><a href = "{{url_for('surgeons_register')}}">Ingcibi ibhalisa apha</a></li>
+               <li><a href = "{{url_for('locator')}}">Igcibi ibhalisa apha</a></li>
             </ul>
                 </li>
 
-                <li class = "dropdown">
+                 <li class = "dropdown">
             <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown">
                Fumana
                <b class = "caret"></b>
@@ -109,9 +97,12 @@
             </ul>
                 </li>
 
+
+
+
                 <li class = "dropdown">
             <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown">
-               Bhala
+               Contact
                <b class = "caret"></b>
             </a>
 
@@ -126,68 +117,116 @@
     <!-- /.container-fluid -->
 </nav>
 
-<section class="success" id="home">
 
-    <div class="about col-xs-12 col-lg-6 col-md-8 col-md-offset-3" style="text-align: left">
 
-        <p>Kubalulekile ukuba iigncibi zibhalise ngokusemthethweni phaya kwisebe lezempilo khona ukuze siqinisekise ukuba zinaso isakhono sokwalusa kwaye ziselungelweni lokwenza njalo. Ukuba ufuna ukubhalisa nje ngengcibi, nceda ugcwalise apha ngezantsi. Igosa lakwarhulumente lizakuqhakamshelana nawe.
-        </p><br/>
+    <div class="col-sm-2 col-xs-5 col-lg-1">
+    	<div id="tile1" class="tile">
+    	</div>
 
-        <form action="{{url_for('surgeons_register')}}" class="form-horizontal" method="POST">
-            {{ form.hidden_tag() }}
-            <div class="form-group {% if form.name.errors %} has-error {% endif %}">
-                <div class="control-label col-sm-3">
-                    Bhala igama?
-                </div>
-                <div class="col-sm-3">
-                    {{ form.name(placeholder="Type your name...", class="form-control") }}
-                </div>
-                <p class="col-sm-5 help-block">
-                    {{ form.name.errors[0] }}
 
-            </div>
-            <div class="form-group {% if form.phone_number.errors %} has-error {% endif %}">
-                <div class="control-label col-sm-3">
-                    Ithini ifone number?
-                </div>
-                <div class="col-sm-3">
-                    {{ form.phone_number(placeholder="Type your phone number...", class="form-control") }}
-                </div>
-                <p class="col-sm-5 help-block">
-                    {{ form.phone_number.errors[0] }}
-
-            </div>
-            <div class="form-group {% if form.area.errors %} has-error {% endif %}">
-                <div class="control-label col-sm-3">
-                    Ingaba ikweyiphi indawo ingcibi?
-                </div>
-                <div class="col-sm-3">
-                    {{ form.area(placeholder="Type your area...", class="form-control") }}
-                </div>
-                <p class="col-sm-5 help-block">
-                    {{ form.area.errors[0] }}
-
-            </div>
-            <button class="btn btn-success" type="submit">Submit</button>
-        </form>
-    </div>
-
-</section>
+</div>
 <br/>
-<footer class="footer-basic-centered col-xs-12 col-lg-6 col-md-8 col-md-offset-3">
-    <br/>
-    <div class="footer-basic-centered footer-company-motto"><a href="http://city-press.news24.com/"><img
-            src="/static/img/logo.png"/></a></div>
-    <br/>
-    <a href="#">Terms of Use</a>
-    ·
-    <a href="#">Frequently asked Questions</a>
-    ·
-    <a href="#">About this tool</a>
-    </p>
+<br/>
 
-</footer>
-<!-- jQuery -->
+    <div class="container dynamicTile">
+        <br/><br/><br/>
+         <div class="row">
+	<div class="col-sm-12">
+		<div id="tile10" class="tile">
+
+           <div class="carousel slide" data-ride="carousel">
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner">
+            <div class="item active">
+              <h3 class="tilecaption"><a href="{{url_for('widgets')}}">Fumanisa</a></h3>
+                <h2 class="tilecaption">apha ukuba ingcibi yakho ibhaliswe ngokusemthethweni na?</h2>
+            </div>
+
+
+          </div>
+        </div>
+
+		</div>
+	</div>
+        </div>
+        <br/>
+        <div class="row">
+	<div class="col-xs-6 col-lg-6 col-md-8">
+		<div id="tile10" class="tile">
+
+           <div class="carousel slide" data-ride="carousel">
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner">
+            <div class="item active">
+               <h3 class="tilecaption"><a href="{{url_for('reports_home')}}">Chaza</a></h3>
+                <h2 class="tilecaption">ibhoma elingekho semthethweni apha.</h2>
+            </div>
+          </div>
+        </div>
+
+		</div>
+	</div>
+	<div class="col-xs-6 col-lg-6 col-md-8">
+		<div id="tile10" class="tile">
+
+           <div class="carousel slide" data-ride="carousel">
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner">
+            <div class="item active">
+               <h3 class="tilecaption"><a href="{{url_for('initiates_home')}}">Sebenzisa</a></h3>
+                <h2 class="tilecaption">lenombholo ye fowuni ukunceda umkhwetha osengxakini.</h2>
+            </div>
+          </div>
+        </div>
+
+		</div>
+	</div>
+        </div>
+        <br/>
+        <div class="row">
+	<div class="col-xs-6 col-lg-6 col-md-8">
+		<div id="tile10" class="tile">
+           <div class="carousel slide" data-ride="carousel">
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner">
+            <div class="item active">
+              <h3 class="tilecaption"><a href="{{url_for('locator')}}">Khangela</a></h3>
+                <h2 class="tilecaption">ingcibi okanye ibhoma elikufuphi nawe.</h2>
+            </div>
+          </div>
+        </div>
+
+		</div>
+	</div>
+
+	<div class="col-xs-6 col-lg-6 col-md-8">
+        <div id="tile10" class="tile">
+           <div class="carousel slide" data-ride="carousel">
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner">
+            <div class="item active">
+              <h3 class="tilecaption"><a href="{{url_for('surgeons_register')}}">Cofa</a></h3>
+                <h2 class="tilecaption">apha xa ufuna ukubhaliswa nje ngengcibi esemthethweni</h2>
+            </div>
+          </div>
+        </div>
+	</div>
+                </div>
+        </div>
+        </div>
+<br/>
+<footer class="footer-basic-centered col-xs-12 col-lg-8 col-md-8 col-md-offset-2">
+    <br/>
+      <div class="footer-basic-centered footer-company-motto"><a href="http://city-press.news24.com/"><img src="/static/img/logo.png" /></a></div><br/>
+	<a href="#">Terms of Use</a>
+				·
+				<a href="#">FAQs</a>
+				·
+				<a href="#">About this tool</a>
+        </p>
+
+    </footer>
+    <!-- jQuery -->
 <script src="/static/js/jquery.js"></script>
 <!-- Bootstrap Core JavaScript -->
 <script src="/static/js/bootstrap.min.js"></script>
@@ -203,8 +242,26 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <!-- Custom Theme JavaScript -->
 <script src="/static/js/google-sheet.js"></script>
-<!-- Custom Theme JavaScript -->
+<script>
+$( document ).ready(function() {
+    $(".tile").height($("#tile1").width());
+    $(".carousel").height($("#tile10").width());
+     $(".item").height($("#tile1").width());
+
+    $(window).resize(function() {
+    if(this.resizeTO) clearTimeout(this.resizeTO);
+	this.resizeTO = setTimeout(function() {
+		$(this).trigger('resizeEnd');
+	}, 10);
+    });
+
+    $(window).bind('resizeEnd', function() {
+    	$(".tile").height($("#tile1").width());
+        $(".carousel").height($("#tile1").width());
+        $(".item").height($("#tile1").width());
+    });
+
+});
+</script>
 </body>
 </html>
-
-

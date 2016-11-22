@@ -8,7 +8,7 @@ SQLALCHEMY_TRACK_MODIFICATIONS = False
 CSRF_ENABLED = True
 SECRET_KEY = 'uhrmaHghurds3craTC0de!'
 SQLALCHEMY_MIGRATE_REPO = os.path.join(basedir, 'db_repository')
-SQLALCHEMY_DATABASE_URI = 'postgres://ipybegwihbxqsq:5DPp9C7Ge8epW-X5OfbyQAC6U4@ec2-54-235-65-221.compute-1.amazonaws.com:5432/d13as5liieseeo'
+
 MAIL_DEFAULT_SENDER = "matthew@opendata.durban"
 
 # Flask-Security config

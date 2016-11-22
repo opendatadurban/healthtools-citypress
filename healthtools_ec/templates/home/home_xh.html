@@ -7,16 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Data Journalism Tools</title>
+    <title>Ezolwaluko</title>
     <link href="/static/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="/static/css/freelancer.css" rel="stylesheet">
     <!-- Custom Fonts -->
     <link href="/static/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=PT+Sans:400,700" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"
           type="text/css">
-
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script src="/static/js/jquery.js"></script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -27,10 +28,10 @@
 </head>
 
 <body>
- <!-- Header -->
+<!-- Header -->
 
-   <!-- Navigation -->
- <nav class="navbar navbar-default navbar-fixed-top col-xs-12 col-lg-6 col-md-8 col-md-offset-3">
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top col-xs-12 col-lg-6 col-md-8 col-md-offset-3">
     <div class="container">
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="navbar-header page-scroll">
@@ -41,59 +42,86 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#page-top">Ezolwaluko<br/><p>Initiation Watch</p></a>
+            <a class="navbar-brand" href="{{ url_for('home') }}">Ezolwaluko<br/>
+                <p>Initiation Watch Beta</p></a>
         </div>
         <div class="nav collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-center">
-                <li class = "dropdown">
-            <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown">
-               Fumanisa
-               <b class = "caret"></b>
-            </a>
+                <li><a href="/en">English</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        Fumanisa
+                        <b class="caret"></b>
+                    </a>
 
-                    <ul class = "dropdown-menu">
-               <li><a href = "#">Ingaba ingcibi yakho ibhalisiwe ngokwasemthethweni?</a></li>
-            </ul>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{ url_for('widgets') }}">Ingaba ingcibi yakho ibhalisiwe ngokwasemthethweni?</a>
+                        </li>
+                    </ul>
                 </li>
-                <li class = "dropdown">
-            <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown">
-               Sebenzisa
-               <b class = "caret"></b>
-            </a>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        Sebenzisa
+                        <b class="caret"></b>
+                    </a>
 
-                    <ul class = "dropdown-menu">
-               <li><a href = "#">Ingaba unomkhwetha omaziyo osengxakini okanye ebungozini?</a></li>
-            </ul>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{ url_for('initiates_home') }}">Ingaba unomkhwetha omaziyo osengxakini okanye
+                            ebungozini?</a></li>
+                    </ul>
                 </li>
-                <li class = "dropdown">
-            <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown">
-               Cofa
-               <b class = "caret"></b>
-            </a>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        Chaza
+                        <b class="caret"></b>
+                    </a>
 
-                    <ul class = "dropdown-menu">
-               <li><a href = "#">Chaza ingcibi engekhosemthethweni</a></li>
-            </ul>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{ url_for('reports_home') }}">Chaza ingcibi engekhosemthethweni</a></li>
+                    </ul>
                 </li>
-                <li class = "dropdown">
-            <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown">
-               Khangela
-               <b class = "caret"></b>
-            </a>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        Igcibi
+                        <b class="caret"></b>
+                    </a>
 
-                    <ul class = "dropdown-menu">
-               <li><a href = "#">Igcibi ibhalisa apha</a></li>
-            </ul>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{ url_for('surgeons_register') }}">Ingcibi ibhalisa apha</a></li>
+                    </ul>
                 </li>
-                <li class = "dropdown">
-            <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown">
-               Contact
-               <b class = "caret"></b>
-            </a>
 
-                    <ul class = "dropdown-menu">
-               <li><a href = "#">Bhala inombolo ze fowuni</a></li>
-            </ul>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        Fumana
+                        <b class="caret"></b>
+                    </a>
+
+                    <ul class="dropdown-menu">
+                        <li><a href="{{ url_for('locator') }}">Fumana ingcibi apha</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        Ulwazi
+                        <b class="caret"></b>
+                    </a>
+
+                    <ul class="dropdown-menu">
+                        <li><a href="{{ url_for('about') }}">Ulwazi malunga nalomba</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        Bhala
+                        <b class="caret"></b>
+                    </a>
+
+                    <ul class="dropdown-menu">
+                        <li><a href="{{ url_for('contact') }}">Bhala inombolo ze fowuni</a></li>
+                    </ul>
                 </li>
             </ul>
         </div>
@@ -102,74 +130,85 @@
     <!-- /.container-fluid -->
 </nav>
 
-    <!-- Header -->
+<!-- Header -->
 
 <!-- Home Section-->
 <section>
 
-<div class="row">
-    <div class="outer col-xs-12 col-lg-6 col-md-8 col-md-offset-3 ">
-        <div class="maintile  ">
-        <div ><br/>
-<br/>
-           <a href="#">Fumanisa</a>
-        <p>apha ukuba ingcibi yakho ibhaliswe ngokusemthethweni na?</p>
-             <br/><br/>
-        </div>
+    <div class="row">
+        <div class="outer col-xs-12 col-lg-6 col-md-8 col-md-offset-3 ">
+            <div class="maintile  ">
+                <div><br/>
+                    <br/>
+                    <a href="{{ url_for('widgets') }}">Fumanisa</a>
+                    <p>apha ukuba ingcibi yakho ibhaliswe ngokusemthethweni na?</p>
+                    <br/><br/>
+                </div>
             </div>
-    </div>
+        </div>
     </div>
     <br/>
-<div class="row">
+    <div class="row">
 
-    <div class="outer col-xs-6  col-lg-3 col-md-4 col-md-offset-3">
-        <div class="maintile ">
-        <div><a href="#">Chaza</a>
-        <p>ibhoma elingekho semthethweni apha.</p>
-        </div>
+        <div class="outer col-xs-6  col-lg-3 col-md-4 col-md-offset-3">
+            <div class="maintile ">
+                <div><a href="{{ url_for('reports_home') }}">Chaza</a>
+                    <p>ibhoma elingekho semthethweni apha.</p>
+                </div>
             </div>
-    </div>
-    <div class="outer col-xs-6 col-md-4 col-lg-3 ">
-        <div class="maintile">
-        <div><a href="#">Sebenzisa</a>
-        <p>lenombholo ye fowuni ukunceda umkhwetha osengxakini.</p>
         </div>
+        <div class="outer col-xs-6 col-md-4 col-lg-3 ">
+            <div class="maintile">
+                <div><a href="{{ url_for('initiates_home') }}">Sebenzisa</a>
+                    <p>lenombholo ye fowuni ukunceda umkhwetha osengxakini</p>
+                </div>
             </div>
+        </div>
     </div>
+    <div class="row" id="row_bottom">
+        <br/>
+        <div class="outer col-xs-6 col-lg-3 col-md-4 col-md-offset-3" id="tile_bot_left">
+            <div class="maintile">
+                <div><a href="{{ url_for('locator') }}">Khangela</a>
+                    <p>ingcibi okanye ibhoma elikufuphi nawe.</p>
+{#                    <br style="display: block; content: ' '; margin-top: 0;">#}
+                </div>
+            </div>
+        </div>
+        <div class="outer col-xs-6 col-md-4 col-lg-3" id="tile_bot_right">
+            <div class="maintile"  >
+                <div><a href="{{ url_for('reports_home') }}">Cofa</a>
+                    <p>apha xa ufuna ukubhaliswa nje ngengcibi esemthethweni</p>
+                </div>
+            </div>
+        </div>
     </div>
-<div class="row">
+
     <br/>
-    <div class="outer col-xs-6 col-lg-3 col-md-4 col-md-offset-3">
-        <div class="maintile  ">
-        <div><a href="#">Khangela</a>
-        <p>ingcibi okanye ibhoma elikufuphi nawe.</p>
-        </div>
-            </div>
-    </div>
-    <div class="outer col-xs-6 col-md-4 col-lg-3">
-        <div class="maintile  ">
-        <div><a href="#">Cofa</a>
-        <p>apha xa ufuna ukubhaliswa nje ngengcibi esemthethweni</p>
-
-        </div>
-            </div>
-    </div>
-</div>
-
-<br/>
-<br/>
-<footer class="footer-basic-centered col-xs-12 col-lg-6 col-md-8 col-md-offset-3">
     <br/>
-      <div class="footer-basic-centered footer-company-motto"><a href="http://city-press.news24.com/.com"><img src="/static/img/logo.png" /></a></div><br/>
-	<a href="#">Terms of Use</a>
-				·
-				<a href="#">Frequently asked Questions</a>
-				·
-				<a href="#">About this tool</a>
+    <footer class="footer-basic-centered col-xs-12 col-lg-6 col-md-8 col-md-offset-3">
+        <br/>
+        <div class="footer-basic-centered footer-company-motto"><a href="http://city-press.news24.com/"><img
+                src="/static/img/logo.png"/></a></div>
+        <br/>
+        <a href="#">Terms of Use</a>
+        ·
+        <a href="#">FAQs</a>
+        ·
+        <a href="{{ url_for('about') }}">About this tool</a>
         </p>
-
     </footer>
 </section>
+
+<script>
+    $(document).ready(function () {
+
+        var right2 = document.getElementById('tile_bot_right').style.height;
+        var left2 = document.getElementById('tile_bot_left').style.height;
+        $('#tile_bot_left').height(right2);
+        $('#tile_bot_left').css("height",right2);
+    });
+</script>
 
 <!-- Tools Section -->
 
@@ -177,7 +216,7 @@
 <!-- About Section -->
 <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
 <!-- jQuery -->
-<script src="/static/js/jquery.js"></script>
+
 <!-- Bootstrap Core JavaScript -->
 <script src="/static/js/bootstrap.min.js"></script>
 <!-- Plugin JavaScript -->

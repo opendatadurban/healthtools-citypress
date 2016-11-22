@@ -21,7 +21,7 @@ def reports_home():
             if session['lang']:
                 return render_template('reportsurgeons/reportsurgeonredirect_xh.html')
             else:
-                render_template('reportsurgeons/reportsurgeonredirect.html')
+                return render_template('reportsurgeons/reportsurgeonredirect.html')
         else:
             if request.is_xhr:
                 status = 412

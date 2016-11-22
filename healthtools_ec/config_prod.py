@@ -7,7 +7,7 @@ TESTING = False
 SQLALCHEMY_TRACK_MODIFICATIONS = False
 CSRF_ENABLED = True
 SECRET_KEY = 'uhrmaHghurds3craTC0de!'
-SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URI')
+SQLALCHEMY_DATABASE_URI = os.environ['DATABASE_URL']
 
 # MAIL_DEFAULT_SENDER = "matthew@opendata.durban"
 

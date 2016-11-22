@@ -1,18 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>About</title>
+    <title>Ezolwaluko</title>
     <link href="/static/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="/static/css/freelancer.css" rel="stylesheet">
     <!-- Custom Fonts -->
     <link href="/static/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=PT+Sans:400,700" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"
           type="text/css">
 
@@ -23,11 +24,13 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-
-    <title>About</title>
 </head>
+
 <body>
-<nav class="navbar navbar-default navbar-fixed-top col-xs-12 col-lg-6 col-md-8 col-md-offset-3">
+ <!-- Header -->
+
+   <!-- Navigation -->
+ <nav class="navbar navbar-default navbar-fixed-top col-xs-12 col-lg-6 col-md-8 col-md-offset-3">
     <div class="container">
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="navbar-header page-scroll">
@@ -38,60 +41,83 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#page-top">Initiation Watch<br/>
-                <p>Ezolwaluko</p></a>
+            <a class="navbar-brand" href="{{ url_for('home')}}">Ezolwaluko<br/><p>Initiation Watch Beta</p></a>
         </div>
         <div class="nav collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-center">
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        Search
-                        <b class="caret"></b>
-                    </a>
+                 <li> <a href="/en">English</a></li>
+                <li class = "dropdown">
+            <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown">
+               Fumanisa
+               <b class = "caret"></b>
+            </a>
 
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Is your surgeon registered?</a></li>
-                    </ul>
+                    <ul class = "dropdown-menu">
+               <li><a href = "{{url_for('widgets')}}">Ingaba ingcibi yakho ibhalisiwe ngokwasemthethweni?</a></li>
+            </ul>
                 </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        Get Help
-                        <b class="caret"></b>
-                    </a>
+                <li class = "dropdown">
+            <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown">
+               Sebenzisa
+               <b class = "caret"></b>
+            </a>
 
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Is an initiate in trouble?</a></li>
-                    </ul>
+                    <ul class = "dropdown-menu">
+               <li><a href = "{{url_for('initiates_home')}}">Ingaba unomkhwetha omaziyo osengxakini okanye ebungozini?</a></li>
+            </ul>
                 </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        Register
-                        <b class="caret"></b>
-                    </a>
+                <li class = "dropdown">
+            <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown">
+               Chaza
+               <b class = "caret"></b>
+            </a>
 
-                    <ul class="dropdown-menu">
-                        <li><a href="#">As a traditional surgeon</a></li>
-                    </ul>
+                    <ul class = "dropdown-menu">
+               <li><a href = "{{url_for('reports_home')}}">Chaza ingcibi engekhosemthethweni</a></li>
+            </ul>
                 </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        Find
-                        <b class="caret"></b>
-                    </a>
+                <li class = "dropdown">
+            <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown">
+               Ingcibi
+               <b class = "caret"></b>
+            </a>
 
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Find a Clinic</a></li>
-                    </ul>
+                    <ul class = "dropdown-menu">
+               <li><a href = "{{url_for('surgeons_register')}}">Ingcibi ibhalisa apha</a></li>
+            </ul>
                 </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        Contact
-                        <b class="caret"></b>
-                    </a>
 
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Contact Details</a></li>
-                    </ul>
+                <li class = "dropdown">
+            <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown">
+               Fumana
+               <b class = "caret"></b>
+            </a>
+
+                    <ul class = "dropdown-menu">
+               <li><a href = "{{url_for('locator')}}">Fumana ingcibi apha</a></li>
+            </ul>
+                </li>
+
+                <li class = "dropdown">
+            <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown">
+               Ulwazi
+               <b class = "caret"></b>
+            </a>
+
+                    <ul class = "dropdown-menu">
+               <li><a href = "{{url_for('about')}}">Ulwazi malunga nalomba</a></li>
+            </ul>
+                </li>
+
+                <li class = "dropdown">
+            <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown">
+               Bhala
+               <b class = "caret"></b>
+            </a>
+
+                    <ul class = "dropdown-menu">
+               <li><a href = "{{url_for('contact')}}">Bhala inombolo ze fowuni</a></li>
+            </ul>
                 </li>
             </ul>
         </div>
@@ -100,7 +126,7 @@
     <!-- /.container-fluid -->
 </nav>
 
-</body>
+
 <section class="success" id="home">
 
     <div class="about col-xs-12 col-lg-6 col-md-8 col-md-offset-3" style="text-align: left">
@@ -177,7 +203,7 @@
 <br/>
 <footer class="footer-basic-centered col-xs-12 col-lg-6 col-md-8 col-md-offset-3">
     <br/>
-    <div class="footer-basic-centered footer-company-motto"><a href="http://city-press.news24.com/.com"><img
+    <div class="footer-basic-centered footer-company-motto"><a href="http://city-press.news24.com/"><img
             src="/static/img/logo.png"/></a></div>
     <br/>
     <a href="#">Terms of Use</a>
@@ -188,4 +214,22 @@
     </p>
 
 </footer>
+<!-- jQuery -->
+<script src="/static/js/jquery.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="/static/js/bootstrap.min.js"></script>
+<!-- Plugin JavaScript -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<script src="/static/js/classie.js"></script>
+<script src="/static/js/cbpAnimatedHeader.js"></script>
+<!-- Contact Form JavaScript -->
+<script src="/static/js/jqBootstrapValidation.js"></script>
+<script src="/static/js/contact_me.js"></script>
+<!-- Custom Theme JavaScript -->
+<script src="/static/js/freelancer.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<!-- Custom Theme JavaScript -->
+<script src="/static/js/google-sheet.js"></script>
+<!-- Custom Theme JavaScript -->
+</body>
 </html>
