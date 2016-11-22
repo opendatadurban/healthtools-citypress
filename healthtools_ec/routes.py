@@ -16,6 +16,7 @@ def home():
             return redirect(url_for('home_xh'))
         else:
             return redirect(url_for('home_en'))
+    session['lang'] = 1
     return redirect(url_for('home_xh'))
 
 
@@ -33,6 +34,8 @@ def home_en():
 
 @app.route('/about')
 def about():
+    if 'lang' not in session.keys():
+        redirect(url_for('home_xh'))
     if session['lang']:
         return render_template('about_xh.html')
     else:
@@ -41,15 +44,31 @@ def about():
 
 @app.route('/contact')
 def contact():
+    if 'lang' not in session.keys():
+        redirect(url_for('home_xh'))
     return render_template('contact.html')
 
 
 @app.route('/find')
 def widgets():
+    if 'lang' not in session.keys():
+        redirect(url_for('home_xh'))
     if session['lang']:
-        return render_template('widgets/searchsurgeon_xh.html')
+        return render_template('widgets/widget_searchsurgeon_xh.html')
     else:
-        return render_template('widgets/searchsurgeon.html')
+        return render_template('widgets/widget_searchsurgeon.html')
+
+
+@app.route('/locate')
+def locator():
+    if 'lang' not in session.keys():
+        redirect(url_for('home_xh'))
+    if session['lang']:
+        return render_template('find_xh.html')
+    else:
+        return render_template('find.html')
+
+
 # @app.route('/admin')
 # def admin():
 #     if current_user.is_authenticated:

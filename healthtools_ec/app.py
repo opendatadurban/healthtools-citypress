@@ -2,12 +2,9 @@ import os
 from flask import Flask
 
 app = Flask(__name__, static_folder='static')
-env = os.environ.get('FLASK_ENV', 'development')
+env = 'production'
 app.config['ENV'] = env
-if env == 'development':
-    app.config.from_pyfile('config.py')
-else:
-    app.config.from_pyfile('config_prod.py')
+app.config.from_pyfile('config_prod.py')
 
 from flask_mako import MakoTemplates, _lookup, render_template
 import haml
@@ -26,6 +23,7 @@ CsrfProtect(app)
 # Database
 from flask_sqlalchemy import SQLAlchemy
 
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
 db = SQLAlchemy(app)
 
 # Mail

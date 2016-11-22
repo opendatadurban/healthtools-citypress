@@ -7,13 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Contact</title>
+    <title>Ezolwaluko</title>
     <link href="/static/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="/static/css/freelancer.css" rel="stylesheet">
     <!-- Custom Fonts -->
     <link href="/static/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=PT+Sans:400,700" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"
           type="text/css">
 
@@ -27,10 +27,10 @@
 </head>
 
 <body>
-<!-- Header -->
+ <!-- Header -->
 
-<!-- Navigation -->
-<nav class="navbar navbar-default navbar-fixed-top col-xs-12 col-lg-6 col-md-8 col-md-offset-3">
+   <!-- Navigation -->
+ <nav class="navbar navbar-default navbar-fixed-top col-xs-12 col-lg-6 col-md-8 col-md-offset-3">
     <div class="container">
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="navbar-header page-scroll">
@@ -41,68 +41,80 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#page-top">Initiation Watch<br/>
-                <p>Ezolwaluko</p></a>
+            <a class="navbar-brand" href="{{ url_for('home')}}">Initiation Watch<br/><p>Ezolwaluko Beta</p></a>
         </div>
         <div class="nav collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-center">
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        Search
-                        <b class="caret"></b>
-                    </a>
+                <li> <a href="/xh">Xhosa</a></li>
+                <li class = "dropdown">
+            <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown">
+               Search
+               <b class = "caret"></b>
+            </a>
 
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Is your surgeon registered?</a></li>
-                    </ul>
+                    <ul class = "dropdown-menu">
+               <li><a href = "{{url_for('widgets')}}">Is your surgeon registered?</a></li>
+            </ul>
                 </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        Get Help
-                        <b class="caret"></b>
-                    </a>
+                <li class = "dropdown">
+            <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown">
+               Get Help
+               <b class = "caret"></b>
+            </a>
 
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Is an initiate in trouble?</a></li>
-                    </ul>
+                    <ul class = "dropdown-menu">
+               <li><a href = "{{url_for('initiates_home')}}">Is an initiate in trouble?</a></li>
+            </ul>
                 </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        Register
-                        <b class="caret"></b>
-                    </a>
 
-                    <ul class="dropdown-menu">
-                        <li><a href="#">As a traditional surgeon</a></li>
-                    </ul>
+
+                <li class = "dropdown">
+            <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown">
+               Report
+               <b class = "caret"></b>
+            </a>
+
+                    <ul class = "dropdown-menu">
+               <li><a href = "{{url_for('reports_home')}}">An illegal tradional surgeon</a></li>
+            </ul>
                 </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        Find
-                        <b class="caret"></b>
-                    </a>
 
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Find a Clinic</a></li>
-                    </ul>
+
+                <li class = "dropdown">
+            <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown">
+               Register
+               <b class = "caret"></b>
+            </a>
+
+                    <ul class = "dropdown-menu">
+               <li><a href = "{{url_for('surgeons_register')}}">As a traditional surgeon</a></li>
+            </ul>
                 </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        Contact
-                        <b class="caret"></b>
-                    </a>
+                <li class = "dropdown">
+            <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown">
+               Find
+               <b class = "caret"></b>
+            </a>
 
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Contact Details</a></li>
-                    </ul>
+                    <ul class = "dropdown-menu">
+               <li><a href = "{{url_for('locator')}}">Find a Clinic</a></li>
+            </ul>
+                </li>
+                <li class = "dropdown">
+            <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown">
+               Contact
+               <b class = "caret"></b>
+            </a>
+
+                    <ul class = "dropdown-menu">
+               <li><a href = "{{url_for('contact')}}">Contact Details</a></li>
+            </ul>
                 </li>
             </ul>
         </div>
-        <!-- /.navbar-collapse -->
-    </div>
+</div>
     <!-- /.container-fluid -->
 </nav>
-
 <!-- Header -->
 <!-- Home Section-->
 <section class="success" id="home">
@@ -110,7 +122,7 @@
         <h3> National Initiation Hotline Number:</h3>
 
 
-        <h3>0800 66 66 11?</h3>
+        <h3>0800 66 66 11</h3>
 
 
         <p id="Contactpara">City Press Contact Details: <br/>
@@ -144,19 +156,24 @@
 
 </section>
 <br/>
+<!-- Tools Section -->
 <footer class="footer-basic-centered col-xs-12 col-lg-6 col-md-8 col-md-offset-3">
     <br/>
-    <div class="footer-basic-centered footer-company-motto"><a href="http://city-press.news24.com/.com"><img
-            src="/healthtools_ec/static/img/logo.png"/></a></div>
-    <br/>
-    <a href="#">Terms of Use</a>
-    ·
-    <a href="#">Frequently asked Questions</a>
-    ·
-    <a href="#">About this tool</a>
-    </p>
+      <div class="footer-basic-centered footer-company-motto"><a href="http://city-press.news24.com/"><img src="/static/img/logo.png" /></a></div><br/>
+	<a href="#">Terms of Use</a>
+				·
+				<a href="#">FAQs</a>
+				·
+				<a  href="{{url_for('about')}}">About this tool</a>
+        </p>
 
-</footer>
+    </footer>
+
+
+<!-- Tools Section -->
+
+
+<!-- About Section -->
 <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
 <!-- jQuery -->
 <script src="/static/js/jquery.js"></script>
