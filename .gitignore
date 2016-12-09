@@ -92,3 +92,6 @@ ENV/
 # No JetBrains files
 .idea/
 .idea/workspace.xml
+*.xml
+.idea/workspace.xml
+*.xml

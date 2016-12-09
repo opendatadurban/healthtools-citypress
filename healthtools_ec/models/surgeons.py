@@ -1,6 +1,6 @@
 from ..app import db
 from ..forms import Form
-from wtforms import StringField, validators
+from wtforms import StringField, validators, SelectField
 from healthtools_ec.app import db
 from sqlalchemy import func
 
@@ -49,4 +49,17 @@ class RegisterForm(Form):
 
     def populate_obj(self, obj):
         super(RegisterForm, self).populate_obj(obj)
+
+
+class FindSurgeonForm(Form):
+
+    location = SelectField('Select your area')
+
+    def __init__(self, *args, **kwargs):
+        super(FindSurgeonForm, self).__init__(*args, **kwargs)
+        query = Surgeon.query.distinct(Surgeon.area)
+        self.location.choices = [[str(i), row.area] for i, row in enumerate(query.all())]
+
+    def validate(self):
+        return super(FindSurgeonForm, self).validate()
 

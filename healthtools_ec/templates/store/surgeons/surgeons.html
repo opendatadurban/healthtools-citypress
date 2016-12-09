@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Ezolwaluko</title>
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="/static/css/freelancer.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="/static/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=PT+Sans:400,700" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"
+          type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+ <!-- Header -->
+
+   <!-- Navigation -->
+ <nav class="navbar navbar-default navbar-fixed-top col-xs-12 col-lg-6 col-md-8 col-md-offset-3">
+    <div class="container">
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{{ url_for('home')}}">Initiation Watch<br/><p>Ezolwaluko Beta</p></a>
+        </div>
+        <div class="nav collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-center">
+                <li> <a href="/xh">Xhosa</a></li>
+                <li class = "dropdown">
+            <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown">
+               Search
+               <b class = "caret"></b>
+            </a>
+
+                    <ul class = "dropdown-menu">
+               <li><a href = "{{url_for('widgets')}}">Is your surgeon registered?</a></li>
+            </ul>
+                </li>
+                <li class = "dropdown">
+            <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown">
+               Get Help
+               <b class = "caret"></b>
+            </a>
+
+                    <ul class = "dropdown-menu">
+               <li><a href = "{{url_for('initiates_home')}}">Is an initiate in trouble?</a></li>
+            </ul>
+                </li>
+
+
+                <li class = "dropdown">
+            <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown">
+               Report
+               <b class = "caret"></b>
+            </a>
+
+                    <ul class = "dropdown-menu">
+               <li><a href = "{{url_for('reports_home')}}">An illegal tradional surgeon</a></li>
+            </ul>
+                </li>
+
+                <li class = "dropdown">
+            <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown">
+               Register
+               <b class = "caret"></b>
+            </a>
+
+                    <ul class = "dropdown-menu">
+               <li><a href = "{{url_for('surgeons_register')}}">As a traditional surgeon</a></li>
+            </ul>
+                </li>
+                <li class = "dropdown">
+            <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown">
+               Find
+               <b class = "caret"></b>
+            </a>
+
+                    <ul class = "dropdown-menu">
+               <li><a href = "{{url_for('locator')}}">Find a Clinic</a></li>
+            </ul>
+                </li>
+                <li class = "dropdown">
+            <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown">
+               Contact
+               <b class = "caret"></b>
+            </a>
+
+                    <ul class = "dropdown-menu">
+               <li><a href = "{{url_for('contact')}}">Contact Details</a></li>
+            </ul>
+                </li>
+            </ul>
+        </div>
+</div>
+    <!-- /.container-fluid -->
+</nav>
+
+
+<section class="success" id="home">
+
+    <div class="about col-xs-12 col-lg-6 col-md-8 col-md-offset-3" style="text-align: left">
+
+        <p>It is important for traditional surgeons to register with the department of health to ensure they have the
+            requisite skills to perform circumcisions.
+            If you would like to register, fill out these fields and a government official will contact you.
+        </p><br/>
+
+        <form action="{{url_for('surgeons_register')}}" class="form-horizontal" method="POST">
+            {{ form.hidden_tag() }}
+            <div class="form-group {% if form.name.errors %} has-error {% endif %}">
+                <div class="control-label col-sm-3">
+                    What is your name?
+                </div>
+                <div class="col-sm-3">
+                    {{ form.name(placeholder="Type your name...", class="form-control") }}
+                </div>
+                <p class="col-sm-5 help-block">
+                    {{ form.name.errors[0] }}
+
+            </div>
+            <div class="form-group {% if form.phone_number.errors %} has-error {% endif %}">
+                <div class="control-label col-sm-3">
+                    What is your phone number?
+                </div>
+                <div class="col-sm-3">
+                    {{ form.phone_number(placeholder="Type your phone number...", class="form-control") }}
+                </div>
+                <p class="col-sm-5 help-block">
+                    {{ form.phone_number.errors[0] }}
+
+            </div>
+            <div class="form-group {% if form.area.errors %} has-error {% endif %}">
+                <div class="control-label col-sm-3">
+                    What area do you work in?
+                </div>
+                <div class="col-sm-3">
+                    {{ form.area(placeholder="Type your area...", class="form-control") }}
+                </div>
+                <p class="col-sm-5 help-block">
+                    {{ form.area.errors[0] }}
+
+            </div>
+            <button class="btn btn-success" type="submit">Submit</button>
+        </form>
+    </div>
+
+</section>
+<br/>
+<!-- Tools Section -->
+<footer class="footer-basic-centered col-xs-12 col-lg-6 col-md-8 col-md-offset-3">
+    <br/>
+      <div class="footer-basic-centered footer-company-motto"><a href="http://city-press.news24.com/"><img src="/static/img/logo.png" /></a></div><br/>
+	<a href="#">Terms of Use</a>
+				·
+				<a href="#">FAQs</a>
+				·
+				<a  href="{{url_for('about')}}">About this tool</a>
+        </p>
+
+    </footer>
+
+
+<!-- Tools Section -->
+
+
+<!-- About Section -->
+<!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+<!-- jQuery -->
+<script src="/static/js/jquery.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="/static/js/bootstrap.min.js"></script>
+<!-- Plugin JavaScript -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<script src="/static/js/classie.js"></script>
+<script src="/static/js/cbpAnimatedHeader.js"></script>
+<!-- Contact Form JavaScript -->
+<script src="/static/js/jqBootstrapValidation.js"></script>
+<script src="/static/js/contact_me.js"></script>
+<!-- Custom Theme JavaScript -->
+<script src="/static/js/freelancer.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<!-- Custom Theme JavaScript -->
+<script src="/static/js/google-sheet.js"></script>
+<!-- Custom Theme JavaScript -->
+</body>
+</html>
+

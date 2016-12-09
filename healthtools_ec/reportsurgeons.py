@@ -1,10 +1,10 @@
 from healthtools_ec.app import app
-# from flask_mako import render_template
 from flask import request, url_for, redirect, flash, make_response, session, render_template
 
 from .models import db
 from .models import *
 from .models.reportsurgeons import ReportForm
+from helpers import email_report
 
 
 @app.route('/reportsurgeon', methods=['GET', 'POST'])
@@ -18,10 +18,12 @@ def reports_home():
                 form.populate_obj(report)
             db.session.add(report)
             db.session.commit()
+            response = email_report(report)
+            print(response.status_code)
             if session['lang']:
-                return render_template('reportsurgeons/reportsurgeonredirect_xh.html')
+                return render_template('templates/reportsurgeons/reportsurgeonredirect_xh.html')
             else:
-                return render_template('reportsurgeons/reportsurgeonredirect.html')
+                return render_template('templates/reportsurgeons/reportsurgeonredirect.html')
         else:
             if request.is_xhr:
                 status = 412
@@ -33,9 +35,9 @@ def reports_home():
 
     if not request.is_xhr:
         if session['lang']:
-            resp = make_response(render_template('reportsurgeons/reportsurgeons_xh.html', form=form))
+            resp = make_response(render_template('templates/reportsurgeons/reportsurgeons_xh.html', form=form))
         else:
-            resp = make_response(render_template('reportsurgeons/reportsurgeons.html', form=form))
+            resp = make_response(render_template('templates/reportsurgeons/reportsurgeons.html', form=form))
 
     else:
         resp = ''
