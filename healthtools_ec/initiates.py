@@ -1,11 +1,10 @@
 from healthtools_ec.app import app
 import time
-# from flask_mako import render_template
 from flask import request, url_for, redirect, flash, make_response, session, render_template
-
 from .models import db
 from .models import *
 from .models.initiates import InitiateForm
+from helpers import email_initiates
 
 
 @app.route('/initiates', methods=['GET', 'POST'])
@@ -19,10 +18,12 @@ def initiates_home():
                 form.populate_obj(initiate)
             db.session.add(initiate)
             db.session.commit()
+            response = email_initiates(initiate)
+            print(response.status_code)
             if session['lang']:
-                return render_template('initiates/initiateredirect_xh.html')
+                return render_template('templates/initiates/initiateredirect_xh.html')
             else:
-                return render_template('initiates/initiateredirect.html')
+                return render_template('templates/initiates/initiateredirect.html')
         else:
             if request.is_xhr:
                 status = 412
@@ -34,9 +35,9 @@ def initiates_home():
 
     if not request.is_xhr:
         if session['lang']:
-            resp = make_response(render_template('initiates/initiates_xh.html', form=form))
+            resp = make_response(render_template('templates/initiates/initiates_xh.html', form=form))
         else:
-            resp = make_response(render_template('initiates/initiates.html', form=form))
+            resp = make_response(render_template('templates/initiates/initiates.html', form=form))
 
     else:
         resp = ''

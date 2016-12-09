@@ -1,0 +1,17 @@
+%%inherit(file="login/base.haml")
+
+%section
+  %h2
+    Hi
+    - if current_user.is_authenticated():
+      &= current_user.first_name or current_user.email
+    - else:
+      there
+
+  %p
+    It appears that something has gone terribly wrong.
+
+  %p
+    Please contact
+    %a(href="mailto:matthew@opendata.durban") matthew@opendata.durban
+    and we'll get right on it, thank you!

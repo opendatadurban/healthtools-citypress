@@ -1,0 +1,21 @@
+%%inherit(file="../layout.haml")
+%%namespace(file="../helpers/bootstrap_wtf.haml", name='*')
+%%block(name="title")
+  Login
+
+%form(action=url_for('security.login'), method='POST', name="login_user_form")
+  = login_user_form.hidden_tag()
+= login_user_form.next()
+
+  .row
+    .col-sm-offset-4.col-sm-4
+      .panel.panel-default
+        .panel-heading
+          %h3.panel-title Login
+
+        .panel-body
+##           = vertical_field(login_user_form.email, required=True, autofocus=True)
+##           = vertical_field(login_user_form.password, required=True)
+
+        .panel-footer
+          %input.btn.btn-success(type='submit', value='Login')

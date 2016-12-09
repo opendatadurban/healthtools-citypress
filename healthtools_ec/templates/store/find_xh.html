@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Ezolwaluko</title>
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="/static/css/freelancer.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="/static/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=PT+Sans:400,700" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"
+          type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+ <!-- Header -->
+
+   <!-- Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top col-xs-12 col-lg-6 col-md-8 col-md-offset-3">
+    <div class="container">
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{{ url_for('home')}}">Ezolwaluko<br/><p>Initiation Watch Beta</p></a>
+        </div>
+        <div class="nav collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-center">
+                 <li> <a href="/en">English</a></li>
+                <li class = "dropdown">
+            <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown">
+               Fumanisa
+               <b class = "caret"></b>
+            </a>
+
+                    <ul class = "dropdown-menu">
+               <li><a href = "{{url_for('widgets')}}">Ingaba ingcibi yakho ibhalisiwe ngokwasemthethweni?</a></li>
+            </ul>
+                </li>
+                <li class = "dropdown">
+            <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown">
+               Sebenzisa
+               <b class = "caret"></b>
+            </a>
+
+                    <ul class = "dropdown-menu">
+               <li><a href = "{{url_for('initiates_home')}}">Ingaba unomkhwetha omaziyo osengxakini okanye ebungozini?</a></li>
+            </ul>
+                </li>
+                <li class = "dropdown">
+            <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown">
+               Chaza
+               <b class = "caret"></b>
+            </a>
+
+                    <ul class = "dropdown-menu">
+               <li><a href = "{{url_for('reports_home')}}">Chaza ingcibi engekhosemthethweni</a></li>
+            </ul>
+                </li>
+                <li class = "dropdown">
+            <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown">
+               Igcibi
+               <b class = "caret"></b>
+            </a>
+
+                    <ul class = "dropdown-menu">
+               <li><a href = "{{url_for('surgeons_register')}}">Ingcibi ibhalisa apha</a></li>
+            </ul>
+                </li>
+
+                <li class = "dropdown">
+            <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown">
+               Fumana
+               <b class = "caret"></b>
+            </a>
+
+                    <ul class = "dropdown-menu">
+               <li><a href = "{{url_for('locator')}}">Fumana ingcibi apha</a></li>
+            </ul>
+                </li>
+
+                <li class = "dropdown">
+            <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown">
+               Ulwazi
+               <b class = "caret"></b>
+            </a>
+
+                    <ul class = "dropdown-menu">
+               <li><a href = "{{url_for('about')}}">Ulwazi malunga nalomba</a></li>
+            </ul>
+                </li>
+
+                <li class = "dropdown">
+            <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown">
+               Bhala
+               <b class = "caret"></b>
+            </a>
+
+                    <ul class = "dropdown-menu">
+               <li><a href = "{{url_for('contact')}}">Bhala inombolo ze fowuni</a></li>
+            </ul>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+<section class="success" id="home">
+
+    <div class="about col-xs-12 col-lg-6 col-md-8 col-md-offset-3" style="text-align: left">
+        <h3>Coming Soon</h3>
+        <br/>
+        <h3>more about this project:</h3>
+        <p>Uninzi lamadoda akwaXhosa alibona isiko lokwaluka nje ngesithethe esibaluleke kakhulu, kwaye esinentsingiselo
+            kubumi babo. Kodwa ngelishwa uninzi labafana abaselula abangabakhwetha baphatheka kakubi xa beyokoluka,
+            abanye bade basweleke ngenxa yeengcibi ezingenalusini. Abanye abaninzi bazifumana nephulukana nobudoda
+            babo.</p>
+        <br>
+    </div>
+
+</section>
+<br/>
+<!-- Tools Section -->
+<footer class="footer-basic-centered col-xs-12 col-lg-6 col-md-8 col-md-offset-3">
+    <br/>
+      <div class="footer-basic-centered footer-company-motto"><a href="http://city-press.news24.com/"><img src="/static/img/logo.png" /></a></div><br/>
+	<a href="#">Terms of Use</a>
+				·
+				<a href="#">FAQs</a>
+				·
+				<a  href="{{url_for('about')}}">About this tool</a>
+        </p>
+
+    </footer>
+
+
+<!-- Tools Section -->
+
+
+<!-- About Section -->
+<!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+<!-- jQuery -->
+<script src="/static/js/jquery.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="/static/js/bootstrap.min.js"></script>
+<!-- Plugin JavaScript -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<script src="/static/js/classie.js"></script>
+<script src="/static/js/cbpAnimatedHeader.js"></script>
+<!-- Contact Form JavaScript -->
+<script src="/static/js/jqBootstrapValidation.js"></script>
+<script src="/static/js/contact_me.js"></script>
+<!-- Custom Theme JavaScript -->
+<script src="/static/js/freelancer.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<!-- Custom Theme JavaScript -->
+<script src="/static/js/google-sheet.js"></script>
+<!-- Custom Theme JavaScript -->
+</body>
+</html>
