@@ -110,48 +110,48 @@ header .intro-text .skills {
     font-weight: 300;
 }
 
-@media(min-width:768px) {
-    header .container {
-        padding-top: 100px;
-        padding-bottom: 5px;
-    }
+/*@media(min-width:768px) {*/
+    /*header .container {*/
+        /*padding-top: 100px;*/
+        /*padding-bottom: 5px;*/
+    /*}*/
 
-    header .intro-text .name {
-        font-size: 4.75em;
-    }
+    /*header .intro-text .name {*/
+        /*font-size: 4.75em;*/
+    /*}*/
 
-    header .intro-text .skills {
-        font-size: 1.75em;
-    }
-}
+    /*header .intro-text .skills {*/
+        /*font-size: 1.75em;*/
+    /*}*/
+/*}*/
 
-@media(min-width:768px) {
-    .navbar-fixed-top {
-        padding: 10px 0;
-        -webkit-transition: padding .3s;
-        -moz-transition: padding .3s;
-        transition: padding .3s;
-    }
+/*@media(min-width:768px) {*/
+    /*.navbar-fixed-top {*/
+        /*padding: 10px 0;*/
+        /*-webkit-transition: padding .3s;*/
+        /*-moz-transition: padding .3s;*/
+        /*transition: padding .3s;*/
+    /*}*/
 
-    .navbar-fixed-top .navbar-brand {
-        font-size: 1em;
-        -webkit-transition: all .3s;
-        -moz-transition: all .3s;
-        transition: all .3s;
-        color: #363435;
-    }
+    /*.navbar-fixed-top .navbar-brand {*/
+        /*font-size: 1em;*/
+        /*-webkit-transition: all .3s;*/
+        /*-moz-transition: all .3s;*/
+        /*transition: all .3s;*/
+        /*color: #363435;*/
+    /*}*/
 
-    .navbar-fixed-top.navbar-shrink {
-        padding: 10px 0;
-    }
+    /*.navbar-fixed-top.navbar-shrink {*/
+        /*padding: 10px 0;*/
+    /*}*/
 
-    .navbar-fixed-top.navbar-shrink .navbar-brand {
-        font-size: 1em;
-    }
-}
+    /*.navbar-fixed-top.navbar-shrink .navbar-brand {*/
+        /*font-size: 1em;*/
+    /*}*/
+/*}*/
 
 .navbar {
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
 }
@@ -203,15 +203,15 @@ section.success a.active {
     color: #259A60;
 }
 
-@media(max-width:767px) {
-    section {
-        padding: 75px 0;
-    }
+/*@media(max-width:767px) {*/
+    /*section {*/
+        /*padding: 75px 0;*/
+    /*}*/
 
-    section.first {
-        padding-top: 75px;
-    }
-}
+    /*section.first {*/
+        /*padding-top: 75px;*/
+    /*}*/
+/*}*/
 
 #portfolio .portfolio-item {
     right: 0;
@@ -264,12 +264,12 @@ section.success a.active {
     z-index: 2;
 }
 
-@media(min-width:768px) {
-    #portfolio .portfolio-item {
-        margin: 0 0 30px;
-        padding: 5px 0px;
-    }
-}
+/*@media(min-width:768px) {*/
+    /*#portfolio .portfolio-item {*/
+        /*margin: 0 0 30px;*/
+        /*padding: 5px 0px;*/
+    /*}*/
+/*}*/
 
 .btn-outline {
     margin-top: 15px;
@@ -284,8 +284,8 @@ section.success a.active {
 .btn-outline:focus,
 .btn-outline:active,
 .btn-outline.active {
-    border: solid 2px #259A60;
-    color: #259A60;
+    border: solid 2px #666666;
+    color: #666666;
     background: #fff;
 }
 
@@ -555,7 +555,7 @@ li{
 }
 
 .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary{
-    background-color: #1CA55E;
+    background-color: #666666;
 }
 
 .portfolio-item{
@@ -573,29 +573,29 @@ li{
     background-color: #97989a;
 }
 
-@media screen and (min-width: 992px) {
-    .navbar-fixed-top .navbar-brand {
-        font-size: 1em;}
-}
+/*@media screen and (min-width: 992px) {*/
+    /*.navbar-fixed-top .navbar-brand {*/
+        /*font-size: 1em;}*/
+/*}*/
 
-@media screen and (max-width: 768px) {
-    body {
-        padding-top: 0px;
-        padding-bottom:70px;
-    }
+/*@media screen and (max-width: 768px) {*/
+    /*body {*/
+        /*padding-top: 0px;*/
+        /*padding-bottom:70px;*/
+    /*}*/
 
-    .portfolio-item{
-        padding: 5px;
-    }
+    /*.portfolio-item{*/
+        /*padding: 5px;*/
+    /*}*/
 
-    p {
-        font-size: 20px;
-    }
+    /*p {*/
+        /*font-size: 20px;*/
+    /*}*/
 
-    p.small {
-        font-size: 12px;
-    }
-}
+    /*p.small {*/
+        /*font-size: 12px;*/
+    /*}*/
+/*}*/
 
 .success{
     padding-bottom: 0px;
@@ -628,6 +628,7 @@ p{
 text-color: #FFFFFF;
 font-size:15px;
 }
+
 h8{
 color: #FFFFFF;
 font-size:20px;

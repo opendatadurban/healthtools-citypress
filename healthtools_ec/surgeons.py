@@ -5,6 +5,7 @@ from flask import request, url_for, redirect, flash, make_response, session, ren
 from .models import db
 from .models import *
 from .models.surgeons import RegisterForm
+from helpers import email_register
 
 
 @app.route('/register', methods=['GET', 'POST'])
@@ -18,10 +19,12 @@ def surgeons_register():
                 form.populate_obj(surgeon)
             db.session.add(surgeon)
             db.session.commit()
+            response = email_register(surgeon)
+            print(response.status_code)
             if session['lang']:
-                return render_template('surgeons/registersurgeonredirect_xh.html')
+                return render_template('templates/surgeons/registersurgeonredirect_xh.html')
             else:
-                return render_template('surgeons/registersurgeonredirect.html')
+                return render_template('templates/surgeons/registersurgeonredirect.html')
         else:
             if request.is_xhr:
                 status = 412
@@ -33,9 +36,9 @@ def surgeons_register():
 
     if not request.is_xhr:
         if session['lang']:
-            resp = make_response(render_template('surgeons/surgeons_xh.html', form=form))
+            resp = make_response(render_template('templates/surgeons/surgeons_xh.html', form=form))
         else:
-            resp = make_response(render_template('surgeons/surgeons.html', form=form))
+            resp = make_response(render_template('templates/surgeons/surgeons.html', form=form))
 
     else:
         resp = ''
