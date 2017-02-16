@@ -23,12 +23,7 @@ def email_initiates(initiate):
         "personalizations": [
             {
                 "to": [{
-                    "email": "nicki.gules@citypress.co.za"
-                }, {
-                    "email": "luba4life@gmail.com"
-                }, {
-                    "email": "mamnkeli.ngam@eccogta.gov.za"
-                }, {
+
                     "email": "matthew@opendata.durban"
                 }],
 
@@ -55,12 +50,7 @@ def email_register(surgeon):
         "personalizations": [
             {
                 "to": [{
-                    "email": "nicki.gules@citypress.co.za"
-                }, {
-                    "email": "luba4life@gmail.com"
-                }, {
-                    "email": "mamnkeli.ngam@eccogta.gov.za"
-                }, {
+
                     "email": "matthew@opendata.durban"
                 }],
 
@@ -87,12 +77,7 @@ def email_report(report):
         "personalizations": [
             {
                 "to": [{
-                    "email": "nicki.gules@citypress.co.za"
-                }, {
-                    "email": "luba4life@gmail.com"
-                }, {
-                    "email": "mamnkeli.ngam@eccogta.gov.za"
-                }, {
+
                     "email": "matthew@opendata.durban"
                 }],
 
